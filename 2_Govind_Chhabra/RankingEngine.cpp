@@ -45,6 +45,12 @@ bool RecommendationEngine::compareMatchResults(const MatchResult& a, const Match
     if (std::fabs(a.matchPercentage - b.matchPercentage) > kEpsilon) {
         return a.matchPercentage > b.matchPercentage;
     }
+    if (a.missingCount != b.missingCount) {
+        return a.missingCount < b.missingCount;
+    }
+    if (a.matchedCount != b.matchedCount) {
+        return a.matchedCount > b.matchedCount;
+    }
     if (a.recipe.getName() != b.recipe.getName()) {
         return a.recipe.getName() < b.recipe.getName();
     }
