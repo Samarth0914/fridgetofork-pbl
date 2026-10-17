@@ -95,6 +95,125 @@
         "Cube potato and toss with olive oil, minced garlic, salt, and black pepper.",
         "Roast at 200C for 25 minutes until crispy on the outside."
       ]
+    },
+    {
+      "id": "rec_006",
+      "name": "Grilled Cheese Sandwich",
+      "category": "Snack",
+      "prep_time_minutes": 10,
+      "ingredients": [
+        { "name": "bread", "category": "grain", "optional": false },
+        { "name": "cheese", "category": "dairy", "optional": false },
+        { "name": "butter", "category": "dairy", "optional": false }
+      ],
+      "instructions": [
+        "Butter the outside of two bread slices.",
+        "Place cheese between the slices and grill until golden brown on both sides."
+      ]
+    },
+    {
+      "id": "rec_007",
+      "name": "Caprese Salad",
+      "category": "Salad",
+      "prep_time_minutes": 8,
+      "ingredients": [
+        { "name": "tomato", "category": "produce", "optional": false },
+        { "name": "cheese", "category": "dairy", "optional": false },
+        { "name": "basil", "category": "produce", "optional": false },
+        { "name": "olive oil", "category": "pantry", "optional": false },
+        { "name": "salt", "category": "spice", "optional": false }
+      ],
+      "instructions": [
+        "Slice tomato and cheese into even rounds.",
+        "Layer with fresh basil leaves, drizzle with olive oil, and season with salt."
+      ]
+    },
+    {
+      "id": "rec_008",
+      "name": "Jeera Rice (Cumin Rice)",
+      "category": "Main Course",
+      "prep_time_minutes": 20,
+      "ingredients": [
+        { "name": "rice", "category": "grain", "optional": false },
+        { "name": "cumin seed", "category": "spice", "optional": false },
+        { "name": "butter", "category": "dairy", "optional": false },
+        { "name": "salt", "category": "spice", "optional": false }
+      ],
+      "instructions": [
+        "Temper cumin seed in melted butter until fragrant.",
+        "Add soaked rice, water, and salt, then simmer until fluffy."
+      ]
+    },
+    {
+      "id": "rec_009",
+      "name": "Tomato Garlic Pasta Marinara",
+      "category": "Main Course",
+      "prep_time_minutes": 25,
+      "ingredients": [
+        { "name": "pasta", "category": "grain", "optional": false },
+        { "name": "tomato", "category": "produce", "optional": false },
+        { "name": "garlic", "category": "produce", "optional": false },
+        { "name": "olive oil", "category": "pantry", "optional": false },
+        { "name": "basil", "category": "produce", "optional": false },
+        { "name": "salt", "category": "spice", "optional": false }
+      ],
+      "instructions": [
+        "Simmer crushed tomato with garlic, olive oil, and salt for 15 minutes.",
+        "Toss with boiled pasta and garnish with fresh basil."
+      ]
+    },
+    {
+      "id": "rec_010",
+      "name": "Lemon Garlic Egg Fried Rice",
+      "category": "Main Course",
+      "prep_time_minutes": 18,
+      "ingredients": [
+        { "name": "rice", "category": "grain", "optional": false },
+        { "name": "egg", "category": "dairy", "optional": false },
+        { "name": "garlic", "category": "produce", "optional": false },
+        { "name": "green onion", "category": "produce", "optional": false },
+        { "name": "soy sauce", "category": "pantry", "optional": false },
+        { "name": "salt", "category": "spice", "optional": false }
+      ],
+      "instructions": [
+        "Scramble egg in a hot wok and set aside.",
+        "Stir-fry garlic and cooked rice, splash soy sauce, mix in egg, and top with green onion."
+      ]
+    },
+    {
+      "id": "rec_011",
+      "name": "French Toast",
+      "category": "Breakfast",
+      "prep_time_minutes": 12,
+      "ingredients": [
+        { "name": "bread", "category": "grain", "optional": false },
+        { "name": "egg", "category": "dairy", "optional": false },
+        { "name": "milk", "category": "dairy", "optional": false },
+        { "name": "butter", "category": "dairy", "optional": false },
+        { "name": "sugar", "category": "pantry", "optional": false }
+      ],
+      "instructions": [
+        "Whisk egg, milk, and sugar in a shallow bowl.",
+        "Dip bread slices into the mixture and pan-fry in butter until golden."
+      ]
+    },
+    {
+      "id": "rec_012",
+      "name": "Aloo Jeera (Spiced Cumin Potato)",
+      "category": "Main Course",
+      "prep_time_minutes": 20,
+      "ingredients": [
+        { "name": "potato", "category": "produce", "optional": false },
+        { "name": "cumin seed", "category": "spice", "optional": false },
+        { "name": "turmeric", "category": "spice", "optional": false },
+        { "name": "green chili", "category": "produce", "optional": false },
+        { "name": "olive oil", "category": "pantry", "optional": false },
+        { "name": "salt", "category": "spice", "optional": false }
+      ],
+      "instructions": [
+        "Boil and cube potato.",
+        "Crack cumin seed and green chili in olive oil, add turmeric and salt, and toss potato cubes until coated."
+      ]
     }
   ]
 }
