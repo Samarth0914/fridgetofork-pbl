@@ -1,0 +1,100 @@
+{
+  "schema_version": "1.0",
+  "standardization_rules": {
+    "case": "lower-case",
+    "number": "singular",
+    "whitespace": "trimmed single-space",
+    "synonym_policy": "canonical singular name only"
+  },
+  "recipes": [
+    {
+      "id": "rec_001",
+      "name": "Classic Garlic Butter Pasta",
+      "category": "Main Course",
+      "prep_time_minutes": 15,
+      "ingredients": [
+        { "name": "pasta", "category": "grain", "optional": false },
+        { "name": "garlic", "category": "produce", "optional": false },
+        { "name": "butter", "category": "dairy", "optional": false },
+        { "name": "salt", "category": "spice", "optional": false }
+      ],
+      "instructions": [
+        "Boil pasta in salted water until al dente.",
+        "Melt butter in a pan and saute minced garlic until golden.",
+        "Toss cooked pasta in the garlic butter and serve warm."
+      ]
+    },
+    {
+      "id": "rec_002",
+      "name": "Tomato Basil Bruschetta",
+      "category": "Appetizer",
+      "prep_time_minutes": 10,
+      "ingredients": [
+        { "name": "bread", "category": "grain", "optional": false },
+        { "name": "tomato", "category": "produce", "optional": false },
+        { "name": "garlic", "category": "produce", "optional": false },
+        { "name": "olive oil", "category": "pantry", "optional": false },
+        { "name": "basil", "category": "produce", "optional": false },
+        { "name": "salt", "category": "spice", "optional": false }
+      ],
+      "instructions": [
+        "Toast bread slices until crisp and rub lightly with garlic.",
+        "Dice tomato and toss with chopped basil, olive oil, and salt.",
+        "Spoon the tomato mixture onto the toasted bread."
+      ]
+    },
+    {
+      "id": "rec_003",
+      "name": "Cheese Omelette",
+      "category": "Breakfast",
+      "prep_time_minutes": 8,
+      "ingredients": [
+        { "name": "egg", "category": "dairy", "optional": false },
+        { "name": "butter", "category": "dairy", "optional": false },
+        { "name": "cheese", "category": "dairy", "optional": false },
+        { "name": "salt", "category": "spice", "optional": false }
+      ],
+      "instructions": [
+        "Beat egg with a pinch of salt.",
+        "Melt butter in a non-stick skillet over medium heat.",
+        "Pour in egg, sprinkle cheese on top, fold, and serve."
+      ]
+    },
+    {
+      "id": "rec_004",
+      "name": "Masala Scrambled Egg (Anda Bhurji)",
+      "category": "Breakfast",
+      "prep_time_minutes": 12,
+      "ingredients": [
+        { "name": "egg", "category": "dairy", "optional": false },
+        { "name": "onion", "category": "produce", "optional": false },
+        { "name": "tomato", "category": "produce", "optional": false },
+        { "name": "green chili", "category": "produce", "optional": false },
+        { "name": "butter", "category": "dairy", "optional": false },
+        { "name": "salt", "category": "spice", "optional": false }
+      ],
+      "instructions": [
+        "Saute finely chopped onion and green chili in butter.",
+        "Add diced tomato and cook until soft.",
+        "Pour in beaten egg with salt and scramble until cooked through."
+      ]
+    },
+    {
+      "id": "rec_005",
+      "name": "Garlic Herb Roasted Potato",
+      "category": "Side Dish",
+      "prep_time_minutes": 30,
+      "ingredients": [
+        { "name": "potato", "category": "produce", "optional": false },
+        { "name": "garlic", "category": "produce", "optional": false },
+        { "name": "olive oil", "category": "pantry", "optional": false },
+        { "name": "salt", "category": "spice", "optional": false },
+        { "name": "black pepper", "category": "spice", "optional": false }
+      ],
+      "instructions": [
+        "Cube potato and toss with olive oil, minced garlic, salt, and black pepper.",
+        "Roast at 200C for 25 minutes until crispy on the outside."
+      ]
+    }
+  ]
+}
