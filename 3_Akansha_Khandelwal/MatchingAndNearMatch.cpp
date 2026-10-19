@@ -46,6 +46,14 @@ MatchResult RecommendationEngine::evaluateRecipe(
         (static_cast<double>(result.matchedCount) * 100.0) /
         static_cast<double>(result.totalRequired);
 
+    if (result.missingCount == 0) {
+        result.category = MatchCategory::COOK_NOW;
+    } else if (result.missingCount <= 2 && result.matchedCount >= 1) {
+        result.category = MatchCategory::NEAR_MATCH;
+    } else {
+        result.category = MatchCategory::LOW_MATCH;
+    }
+
     return result;
 }
 
