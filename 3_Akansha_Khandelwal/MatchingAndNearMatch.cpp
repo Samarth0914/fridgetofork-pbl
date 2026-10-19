@@ -42,6 +42,10 @@ MatchResult RecommendationEngine::evaluateRecipe(
     result.matchedCount = result.matchedIngredients.size();
     result.missingCount = result.missingIngredients.size();
 
+    result.matchPercentage =
+        (static_cast<double>(result.matchedCount) * 100.0) /
+        static_cast<double>(result.totalRequired);
+
     return result;
 }
 
