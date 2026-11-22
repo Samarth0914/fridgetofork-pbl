@@ -1,0 +1,197 @@
+[
+  {
+    "id": 1,
+    "title": "Classic Scrambled Eggs",
+    "category": "Breakfast",
+    "prep_time": 10,
+    "ingredients": [
+      "egg",
+      "butter",
+      "milk"
+    ],
+    "instructions": "Whisk eggs with a splash of milk. Melt butter in a non-stick pan over medium-low heat and stir gently until soft curds form."
+  },
+  {
+    "id": 2,
+    "title": "French Toast",
+    "category": "Breakfast",
+    "prep_time": 15,
+    "ingredients": [
+      "bread",
+      "egg",
+      "milk",
+      "butter"
+    ],
+    "instructions": "Whisk egg and milk in a shallow dish. Dip bread slices on both sides and fry in melted butter until golden brown."
+  },
+  {
+    "id": 3,
+    "title": "Simple Grilled Cheese",
+    "category": "Snack",
+    "prep_time": 10,
+    "ingredients": [
+      "bread",
+      "cheese",
+      "butter"
+    ],
+    "instructions": "Place cheese between bread slices, butter the outside of both slices, and toast in a pan until golden and melted."
+  },
+  {
+    "id": 4,
+    "title": "Tomato Onion Omelette",
+    "category": "Breakfast",
+    "prep_time": 12,
+    "ingredients": [
+      "egg",
+      "onion",
+      "tomato",
+      "butter"
+    ],
+    "instructions": "Finely chop onion and tomato, whisk with eggs, and cook in a hot buttered pan until set on both sides."
+  },
+  {
+    "id": 5,
+    "title": "Garlic Butter Pasta",
+    "category": "Dinner",
+    "prep_time": 20,
+    "ingredients": [
+      "pasta",
+      "garlic",
+      "butter",
+      "cheese"
+    ],
+    "instructions": "Boil pasta al dente. Saut\u00e9 minced garlic in butter, toss with pasta, and fold in grated cheese."
+  },
+  {
+    "id": 6,
+    "title": "Jeera Fried Rice",
+    "category": "Lunch",
+    "prep_time": 15,
+    "ingredients": [
+      "rice",
+      "butter",
+      "onion",
+      "cumin"
+    ],
+    "instructions": "Crackle/saut\u00e9 cumin and sliced onion in butter until golden. Add cooked rice and toss over high heat."
+  },
+  {
+    "id": 7,
+    "title": "Egg Fried Rice",
+    "category": "Dinner",
+    "prep_time": 15,
+    "ingredients": [
+      "rice",
+      "egg",
+      "onion",
+      "garlic",
+      "butter"
+    ],
+    "instructions": "Scramble eggs in a wok and set aside. Saut\u00e9 onion and garlic in butter, add cooked rice, and fold in eggs."
+  },
+  {
+    "id": 8,
+    "title": "Aloo Jeera (Spiced Potato)",
+    "category": "Lunch",
+    "prep_time": 20,
+    "ingredients": [
+      "potato",
+      "onion",
+      "garlic",
+      "butter",
+      "cumin"
+    ],
+    "instructions": "Boil and cube potato. Saut\u00e9 cumin, chopped onion, and garlic in butter, add potato cubes, and fry until crisp."
+  },
+  {
+    "id": 9,
+    "title": "Paneer Bhurji",
+    "category": "Dinner",
+    "prep_time": 20,
+    "ingredients": [
+      "paneer",
+      "onion",
+      "tomato",
+      "garlic",
+      "butter"
+    ],
+    "instructions": "Crumble paneer. Saut\u00e9 onion, garlic, and tomato in butter until soft. Fold in paneer and simmer for 5 minutes."
+  },
+  {
+    "id": 10,
+    "title": "Garlic Herb Bread",
+    "category": "Snack",
+    "prep_time": 12,
+    "ingredients": [
+      "bread",
+      "garlic",
+      "butter"
+    ],
+    "instructions": "Mix minced garlic with softened butter, spread generously over bread slices, and toast until crisp."
+  },
+  {
+    "id": 11,
+    "title": "Tomato Basil Pasta",
+    "category": "Dinner",
+    "prep_time": 25,
+    "ingredients": [
+      "pasta",
+      "tomato",
+      "garlic",
+      "cheese",
+      "butter"
+    ],
+    "instructions": "Simmer chopped tomato and minced garlic in butter until a rich sauce forms. Toss with boiled pasta and top with cheese."
+  },
+  {
+    "id": 12,
+    "title": "Creamy Banana Oatmeal",
+    "category": "Breakfast",
+    "prep_time": 10,
+    "ingredients": [
+      "oat",
+      "milk",
+      "banana",
+      "honey"
+    ],
+    "instructions": "Simmer oat in milk for 5 minutes until creamy. Top with sliced banana and drizzle with honey."
+  },
+  {
+    "id": 13,
+    "title": "Banana Honey Smoothie",
+    "category": "Beverage",
+    "prep_time": 5,
+    "ingredients": [
+      "banana",
+      "milk",
+      "honey"
+    ],
+    "instructions": "Combine ripe banana, chilled milk, and honey in a blender and blend on high until smooth and frothy."
+  },
+  {
+    "id": 14,
+    "title": "Zesty Egg Salad",
+    "category": "Lunch",
+    "prep_time": 15,
+    "ingredients": [
+      "egg",
+      "onion",
+      "lemon"
+    ],
+    "instructions": "Hard boil egg and chop roughly. Toss with finely diced onion and fresh lemon juice."
+  },
+  {
+    "id": 15,
+    "title": "Potato Onion Frittata",
+    "category": "Breakfast",
+    "prep_time": 25,
+    "ingredients": [
+      "egg",
+      "potato",
+      "onion",
+      "cheese",
+      "butter"
+    ],
+    "instructions": "Saut\u00e9 thin potato slices and onion in butter until tender. Pour beaten egg over top, sprinkle cheese, and cook on low."
+  }
+]
