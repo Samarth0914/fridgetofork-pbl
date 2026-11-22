@@ -2,6 +2,9 @@
 #include <iostream>
 #include <cassert>
 #include <cmath>
+#include <chrono>
+#include <fstream>
+#include <sstream>
 
 void testExactMatch() {
     RecommendationEngine engine;
@@ -59,17 +62,126 @@ void testRankingAndTieBreaking() {
     std::cout << "[PASS] Unit Test 3: Ranking & 4-Tier Deterministic Tie-breaking" << std::endl;
 }
 
+void testEmptyInput() {
+    RecommendationEngine engine;
+    engine.addRecipe(Recipe(1, "Toast", "Snack", 5, { Ingredient("bread") }));
+
+    std::vector<std::string> emptyHave;
+    auto results = engine.recommend(emptyHave, 10);
+    assert(results.empty());
+    std::cout << "[PASS] Edge Test 4: Empty user input handled gracefully" << std::endl;
+}
+
+void testDuplicateAndDirtyInput() {
+    RecommendationEngine engine;
+    engine.addRecipe(Recipe(1, "Tomato Omelette", "Breakfast", 10, 
+        { Ingredient("egg"), Ingredient("tomato") }));
+
+    std::vector<std::string> dirtyHave = { "  EGG  ", "egg", "tomatoes", "TOMATO", "unknown_space_dust" };
+    auto results = engine.recommend(dirtyHave, 10);
+
+    assert(results.size() == 1);
+    assert(results[0].isExactMatch == true);
+    assert(results[0].matchedIngredients.size() == 2);
+    std::cout << "[PASS] Edge Test 5: Duplicate, mixed-case, whitespace, and unknown ingredients handled" << std::endl;
+}
+
+void testMoreResultsRequestedThanAvailable() {
+    RecommendationEngine engine;
+    engine.addRecipe(Recipe(1, "Toast", "Snack", 5, { Ingredient("bread") }));
+    engine.addRecipe(Recipe(2, "Butter Toast", "Snack", 5, { Ingredient("bread"), Ingredient("butter") }));
+
+    std::vector<std::string> userHave = { "bread", "butter" };
+    auto results = engine.recommend(userHave, 100);
+
+    assert(results.size() == 2);
+    std::cout << "[PASS] Edge Test 6: More results requested than available handled safely" << std::endl;
+}
+
+void testNearMatchFloorRejection() {
+    RecommendationEngine engine;
+    engine.addRecipe(Recipe(1, "Truffle Pasta", "Dinner", 30, 
+        { Ingredient("pasta"), Ingredient("cream"), Ingredient("truffle") }));
+
+    std::vector<std::string> userHave = { "pasta" };
+    auto results = engine.recommend(userHave, 10, 50.0);
+
+    assert(results.empty());
+    std::cout << "[PASS] Edge Test 7: Near match floor rejection (<50% match discarded)" << std::endl;
+}
+
+void testJsonDatasetAndBridgeSerialization() {
+    std::ifstream file("data/recipes.json");
+    if (!file.is_open()) {
+        file.open("fridgetofork/data/recipes.json");
+    }
+    assert(file.is_open());
+    std::stringstream buffer;
+    buffer << file.rdbuf();
+
+    RecommendationEngine engine;
+    bool ok = engine.loadRecipesFromJsonString(buffer.str());
+    assert(ok);
+    assert(engine.getCatalogSize() == 30);
+
+    auto results = engine.recommend({ "egg", "butter", "milk", "bread" }, 5);
+    assert(!results.empty());
+    assert(results[0].isExactMatch == true);
+
+    std::string jsonOut = RecommendationEngine::resultsToJson(results);
+    assert(jsonOut.find("Classic Scrambled Eggs") != std::string::npos);
+    assert(jsonOut.find("French Toast") != std::string::npos);
+    std::cout << "[PASS] Integration Test 8: JSON Catalog Loader (30 recipes) & Bridge Serializer verified" << std::endl;
+}
+
+void testPerformanceLargeCatalog() {
+    RecommendationEngine engine;
+    std::vector<std::string> masterIngredients = {
+        "egg", "bread", "butter", "milk", "cheese", "tomato", "onion",
+        "potato", "garlic", "ginger", "rice", "chicken", "paneer", "spinach"
+    };
+
+    for (int i = 1; i <= 150; ++i) {
+        std::vector<Ingredient> ings;
+        ings.emplace_back(masterIngredients[i % masterIngredients.size()]);
+        ings.emplace_back(masterIngredients[(i + 3) % masterIngredients.size()]);
+        ings.emplace_back(masterIngredients[(i + 7) % masterIngredients.size()]);
+        engine.addRecipe(Recipe(i, "Synthetic Recipe #" + std::to_string(i), "Test", 15, ings));
+    }
+
+    std::vector<std::string> userHave = { "egg", "bread", "butter", "onion", "garlic" };
+
+    auto start = std::chrono::high_resolution_clock::now();
+    for (int iter = 0; iter < 100; ++iter) {
+        auto results = engine.recommend(userHave, 10);
+    }
+    auto end = std::chrono::high_resolution_clock::now();
+
+    double totalMs = std::chrono::duration<double, std::milli>(end - start).count();
+    double avgMs = totalMs / 100.0;
+
+    std::cout << "[PASS] Performance Benchmark 9: Catalog of 150 recipes evaluated 100x." << std::endl;
+    std::cout << "       Average query latency: " << avgMs << " ms (Threshold: < 5.0 ms)" << std::endl;
+    assert(avgMs < 5.0);
+}
+
 int main() {
     std::cout << "==================================================" << std::endl;
-    std::cout << "     FridgeToFork (T141) Core Unit Test Suite     " << std::endl;
+    std::cout << "     FridgeToFork (T141) Comprehensive Test Suite" << std::endl;
     std::cout << "==================================================" << std::endl;
 
     testExactMatch();
     testNearMatch();
     testRankingAndTieBreaking();
+    testEmptyInput();
+    testDuplicateAndDirtyInput();
+    testMoreResultsRequestedThanAvailable();
+    testNearMatchFloorRejection();
+    testJsonDatasetAndBridgeSerialization();
+    testPerformanceLargeCatalog();
 
     std::cout << "==================================================" << std::endl;
-    std::cout << "          ALL 3 CORE UNIT TESTS PASSED!           " << std::endl;
+    std::cout << "  ALL 9 UNIT, EDGE, INTEGRATION & SPEED TESTS PASS" << std::endl;
     std::cout << "==================================================" << std::endl;
     return 0;
 }
