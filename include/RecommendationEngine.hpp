@@ -33,12 +33,18 @@ public:
     void clearCatalog();
     size_t getCatalogSize() const;
 
+    // Load recipes from JSON formatted string
+    bool loadRecipesFromJsonString(const std::string& jsonString);
+
     // Recommend top recipes based on user's available ingredients
     std::vector<RecipeMatchResult> recommend(
         const std::vector<std::string>& userIngredients,
         size_t topN = 10,
         double minNearMatchThreshold = 50.0
     ) const;
+
+    // Helper: export results to JSON string for web/bridge transmission
+    static std::string resultsToJson(const std::vector<RecipeMatchResult>& results);
 };
 
 #endif // RECOMMENDATION_ENGINE_HPP
