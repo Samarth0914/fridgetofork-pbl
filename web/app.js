@@ -1,6 +1,7 @@
 // FridgeToFork Web Controller & WebAssembly Bridge (Team T141)
 let catalog = [];
 let selectedIngredients = new Set();
+let allKnownIngredients = [];
 let currentFilter = 'all';
 let wasmReady = false;
 
@@ -427,6 +428,11 @@ async function initApp() {
         document.getElementById('engineStatusText').textContent = 'Client Engine Ready (' + catalog.length + ' recipes)';
     }
 
+    // Extract unique standardized ingredients for M6 Autocomplete
+    const ingSet = new Set();
+    catalog.forEach(r => r.ingredients.forEach(i => ingSet.add(normalizeIngredient(i))));
+    allKnownIngredients = Array.from(ingSet).sort();
+
     setupEventListeners();
     updateUI();
 }
@@ -493,15 +499,42 @@ function getRecommendations(userIngredientsList, topN = 10, minNearThreshold = 5
 
 function setupEventListeners() {
     const input = document.getElementById('ingredientInput');
+    const dropdown = document.getElementById('autocompleteList');
     const addBtn = document.getElementById('addBtn');
     const findBtn = document.getElementById('findRecipesBtn');
     const clearBtn = document.getElementById('clearAllBtn');
+
+    // M6: Real-time Ingredient Autocomplete
+    input.addEventListener('input', () => {
+        const query = normalizeIngredient(input.value);
+        if (!query) {
+            dropdown.classList.add('hidden');
+            return;
+        }
+        const matches = allKnownIngredients.filter(i => i.includes(query) && !selectedIngredients.has(i));
+        if (matches.length === 0) {
+            dropdown.classList.add('hidden');
+            return;
+        }
+        dropdown.innerHTML = matches.map(m => `<div class="autocomplete-item" data-value="${m}">${m}</div>`).join('');
+        dropdown.classList.remove('hidden');
+    });
+
+    dropdown.addEventListener('click', (e) => {
+        if (e.target.classList.contains('autocomplete-item')) {
+            addIngredient(e.target.dataset.value);
+            input.value = '';
+            dropdown.classList.add('hidden');
+            input.focus();
+        }
+    });
 
     addBtn.addEventListener('click', () => {
         const val = normalizeIngredient(input.value);
         if (val) {
             addIngredient(val);
             input.value = '';
+            dropdown.classList.add('hidden');
         }
     });
 
@@ -573,7 +606,12 @@ function executeSearch() {
         return;
     }
 
+    const t0 = performance.now();
     let results = getRecommendations(Array.from(selectedIngredients), 12);
+    const t1 = performance.now();
+
+    const latency = (t1 - t0).toFixed(2);
+    document.getElementById('benchmarkNotice').textContent = `Query time: ${latency} ms`;
 
     if (currentFilter === 'exact') results = results.filter(r => r.is_exact);
     if (currentFilter === 'near') results = results.filter(r => r.is_near);
