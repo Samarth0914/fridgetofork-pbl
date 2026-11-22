@@ -193,5 +193,208 @@
       "butter"
     ],
     "instructions": "Saut\u00e9 thin potato slices and onion in butter until tender. Pour beaten egg over top, sprinkle cheese, and cook on low."
+  },
+  {
+    "id": 16,
+    "title": "Quick Palak Paneer",
+    "category": "Dinner",
+    "prep_time": 25,
+    "ingredients": [
+      "paneer",
+      "spinach",
+      "onion",
+      "tomato",
+      "garlic"
+    ],
+    "instructions": "Blanch and puree spinach. Saut\u00e9 onion, garlic, and tomato, stir in spinach puree and cubed paneer, and simmer 6 minutes."
+  },
+  {
+    "id": 17,
+    "title": "Chicken Garlic Stir-Fry",
+    "category": "Dinner",
+    "prep_time": 20,
+    "ingredients": [
+      "chicken breast",
+      "garlic",
+      "onion",
+      "bell pepper",
+      "butter"
+    ],
+    "instructions": "Slice chicken breast into strips and saut\u00e9 with garlic in butter. Add bell pepper and onion and stir-fry for 4 minutes."
+  },
+  {
+    "id": 18,
+    "title": "Vegetable Pulao",
+    "category": "Lunch",
+    "prep_time": 30,
+    "ingredients": [
+      "rice",
+      "carrot",
+      "onion",
+      "potato",
+      "butter"
+    ],
+    "instructions": "Saut\u00e9 sliced onion, diced carrot, and potato in butter. Add washed rice and water, cover, and steam for 15 minutes."
+  },
+  {
+    "id": 19,
+    "title": "Cheesy Potato Bake",
+    "category": "Snack",
+    "prep_time": 30,
+    "ingredients": [
+      "potato",
+      "cheese",
+      "milk",
+      "butter",
+      "garlic"
+    ],
+    "instructions": "Layer thinly sliced potato with minced garlic, butter, and milk. Top with cheese and bake until bubbling."
+  },
+  {
+    "id": 20,
+    "title": "Honey Butter Toast",
+    "category": "Snack",
+    "prep_time": 8,
+    "ingredients": [
+      "bread",
+      "butter",
+      "honey"
+    ],
+    "instructions": "Toast bread slices in butter until golden brown and drizzle warm honey over top immediately."
+  },
+  {
+    "id": 21,
+    "title": "Masala Cheese Toast",
+    "category": "Snack",
+    "prep_time": 12,
+    "ingredients": [
+      "bread",
+      "cheese",
+      "onion",
+      "tomato",
+      "butter"
+    ],
+    "instructions": "Top bread with finely diced onion, tomato, and grated cheese. Toast in butter on a covered skillet until cheese melts."
+  },
+  {
+    "id": 22,
+    "title": "Lemon Garlic Chicken",
+    "category": "Dinner",
+    "prep_time": 22,
+    "ingredients": [
+      "chicken breast",
+      "lemon",
+      "garlic",
+      "butter"
+    ],
+    "instructions": "Pan-sear chicken breast in butter with minced garlic until golden. Deglaze pan with fresh lemon juice and spoon over top."
+  },
+  {
+    "id": 23,
+    "title": "Spinach Cheese Omelette",
+    "category": "Breakfast",
+    "prep_time": 10,
+    "ingredients": [
+      "egg",
+      "spinach",
+      "cheese",
+      "butter"
+    ],
+    "instructions": "Wilt spinach in butter for 1 minute. Pour in whisked egg, sprinkle cheese in the center, and fold over."
+  },
+  {
+    "id": 24,
+    "title": "Creamy Garlic Mushroom Rice",
+    "category": "Dinner",
+    "prep_time": 20,
+    "ingredients": [
+      "rice",
+      "mushroom",
+      "garlic",
+      "butter",
+      "cheese"
+    ],
+    "instructions": "Saut\u00e9 sliced mushroom and minced garlic in butter until browned. Fold in warm rice and grated cheese."
+  },
+  {
+    "id": 25,
+    "title": "Cucumber Tomato Salad",
+    "category": "Lunch",
+    "prep_time": 8,
+    "ingredients": [
+      "cucumber",
+      "tomato",
+      "onion",
+      "lemon"
+    ],
+    "instructions": "Dice cucumber, tomato, and onion into bite-sized pieces. Toss with fresh lemon juice and serve chilled."
+  },
+  {
+    "id": 26,
+    "title": "Paneer Tikka Skillet",
+    "category": "Snack",
+    "prep_time": 18,
+    "ingredients": [
+      "paneer",
+      "bell pepper",
+      "onion",
+      "yogurt",
+      "lemon"
+    ],
+    "instructions": "Marinate cubed paneer, bell pepper, and onion in spiced yogurt and lemon juice. Sear in a hot skillet until charred."
+  },
+  {
+    "id": 27,
+    "title": "Banana Pancake",
+    "category": "Breakfast",
+    "prep_time": 15,
+    "ingredients": [
+      "banana",
+      "egg",
+      "oat",
+      "milk",
+      "butter"
+    ],
+    "instructions": "Mash banana and blend with egg, oat, and milk into a smooth batter. Cook small pancakes in a buttered pan."
+  },
+  {
+    "id": 28,
+    "title": "Garlic Mashed Potato",
+    "category": "Dinner",
+    "prep_time": 25,
+    "ingredients": [
+      "potato",
+      "butter",
+      "milk",
+      "garlic"
+    ],
+    "instructions": "Boil peeled potato until fork-tender. Mash with warm milk, melted butter, and roasted minced garlic until fluffy."
+  },
+  {
+    "id": 29,
+    "title": "Mushroom Cheese Toastie",
+    "category": "Snack",
+    "prep_time": 14,
+    "ingredients": [
+      "bread",
+      "mushroom",
+      "cheese",
+      "butter",
+      "garlic"
+    ],
+    "instructions": "Saut\u00e9 sliced mushroom with garlic in butter. Layer onto bread with cheese and grill until crisp."
+  },
+  {
+    "id": 30,
+    "title": "Curd Rice (Thayir Sadam)",
+    "category": "Lunch",
+    "prep_time": 10,
+    "ingredients": [
+      "rice",
+      "yogurt",
+      "milk",
+      "cucumber"
+    ],
+    "instructions": "Mash warm cooked rice with yogurt and a splash of milk. Fold in finely diced cucumber and serve cool."
   }
 ]
