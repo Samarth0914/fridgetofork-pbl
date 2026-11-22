@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FridgeToFork - Smart C++/Wasm Recipe Recommender</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="app-header">
+        <div class="header-inner">
+            <div class="brand">
+                <span class="brand-icon">🍳</span>
+                <div>
+                    <h1>FridgeToFork</h1>
+                    <span class="sub-brand">WebAssembly C++ Recommender &bull; Team T141</span>
+                </div>
+            </div>
+            <div class="engine-badge" id="engineStatusBadge">
+                <span class="status-dot online"></span>
+                <span id="engineStatusText">C++ Wasm Engine Active</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Hero section -->
+        <section class="hero-section">
+            <h2>What's in your kitchen today?</h2>
+            <p>Select the ingredients you already have. We will find dishes you can cook immediately, or near-matches missing just 1 or 2 items.</p>
+        </section>
+
+        <!-- Search & Autocomplete section -->
+        <section class="input-card">
+            <div class="search-container">
+                <label for="ingredientInput" class="input-label">Add Ingredients (Autocomplete enabled)</label>
+                <div class="search-box">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" id="ingredientInput" placeholder="Type an ingredient (e.g. egg, butter, potato, garlic)..." autocomplete="off">
+                    <button id="addBtn" class="btn btn-primary">Add</button>
+                </div>
+                <div id="autocompleteList" class="autocomplete-dropdown hidden"></div>
+            </div>
+
+            <!-- Quick Add Categories -->
+            <div class="quick-add-group">
+                <span class="quick-title">Quick Select Staples:</span>
+                <div class="pills-container" id="quickPills">
+                    <!-- Dynamic or staple pills -->
+                    <button class="pill-btn" data-ingredient="egg">+ Egg</button>
+                    <button class="pill-btn" data-ingredient="bread">+ Bread</button>
+                    <button class="pill-btn" data-ingredient="butter">+ Butter</button>
+                    <button class="pill-btn" data-ingredient="milk">+ Milk</button>
+                    <button class="pill-btn" data-ingredient="cheese">+ Cheese</button>
+                    <button class="pill-btn" data-ingredient="onion">+ Onion</button>
+                    <button class="pill-btn" data-ingredient="tomato">+ Tomato</button>
+                    <button class="pill-btn" data-ingredient="garlic">+ Garlic</button>
+                    <button class="pill-btn" data-ingredient="potato">+ Potato</button>
+                    <button class="pill-btn" data-ingredient="rice">+ Rice</button>
+                    <button class="pill-btn" data-ingredient="pasta">+ Pasta</button>
+                    <button class="pill-btn" data-ingredient="paneer">+ Paneer</button>
+                </div>
+            </div>
+
+            <!-- Selected Ingredients Basket -->
+            <div class="basket-section">
+                <div class="basket-header">
+                    <h3>Your Available Ingredients (<span id="ingredientCount">0</span>)</h3>
+                    <button id="clearAllBtn" class="btn-text">Clear All</button>
+                </div>
+                <div id="selectedContainer" class="selected-tags">
+                    <p class="empty-hint" id="emptyHint">No ingredients selected yet. Type above or click a quick-select staple!</p>
+                </div>
+            </div>
+
+            <div class="action-bar">
+                <button id="findRecipesBtn" class="btn btn-accent btn-large">
+                    <span>⚡ Find Recipes to Cook</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Results section -->
+        <section class="results-section" id="resultsSection">
+            <div class="results-header">
+                <div class="results-summary">
+                    <h2 id="resultsHeading">Recommended Recipes</h2>
+                    <span id="benchmarkNotice" class="benchmark-pill"></span>
+                </div>
+                <div class="filter-pills" id="resultFilters">
+                    <button class="filter-btn active" data-filter="all">All Suggestions</button>
+                    <button class="filter-btn" data-filter="exact">Cook Now (100%)</button>
+                    <button class="filter-btn" data-filter="near">Near-Matches (Missing 1-2)</button>
+                </div>
+            </div>
+
+            <div class="cards-grid" id="recipesGrid">
+                <!-- Recipe Cards rendered dynamically -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="app-footer">
+        <p><strong>FridgeToFork</strong> &mdash; Project-Based Learning Phase-III &bull; Team T141</p>
+        <p class="credits">Department of Computer Science &amp; Engineering &bull; Graphic Era Deemed to be University, Dehradun</p>
+    </footer>
+
+    <!-- WebAssembly glue script (if generated by emcc) -->
+    <script src="fridgetofork.js" onerror="console.log('Running in client-side high-fidelity mirror mode (WebAssembly fallback).')"></script>
+    <script src="app.js"></script>
+</body>
+</html>
